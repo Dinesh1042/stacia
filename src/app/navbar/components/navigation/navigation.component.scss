@@ -1,0 +1,93 @@
+@import "breakpoints";
+@import "variables";
+
+$navbarBreakpoint: 62em;
+
+.navbar-nav {
+  gap: 0.5rem;
+  margin-block: 1rem;
+  margin-top: 0.25rem;
+
+  .nav-item {
+    .nav-link {
+      display: inline-block;
+      padding-inline: 0.75rem;
+      border-radius: 0.25rem;
+      transition: 250ms ease-in-out background-color, 250ms ease-in-out color;
+
+      @include customBreakPoint($navbarBreakpoint) {
+        padding-inline: 1rem;
+        padding-block: 0.6rem;
+      }
+    }
+
+    &:not(.highlight),
+    &:not(.dropdown) {
+      .nav-link {
+        &:hover {
+          background-color: $primary-100;
+          color: $primary;
+        }
+      }
+    }
+
+    &.highlight {
+      order: 1;
+      display: block;
+
+      .nav-link {
+        text-align: center;
+        border: 1px solid $primary;
+        color: $primary;
+
+        &:hover {
+          background-color: $primary-100;
+        }
+
+        @include customBreakPoint($navbarBreakpoint) {
+          background-color: $primary;
+          color: #fff;
+          &:hover {
+            background-color: darken($primary, 7);
+            border-color: $primary;
+            color: #fff;
+          }
+        }
+      }
+
+      @include customBreakPoint($navbarBreakpoint) {
+        order: unset;
+      }
+    }
+  }
+
+  @include customBreakPoint($navbarBreakpoint) {
+    gap: 1.75rem;
+    margin-block: 0;
+    margin-top: 0;
+  }
+}
+
+.nav-item.dropdown {
+  &.show {
+    button {
+      background-color: $primary-100;
+      color: $primary;
+    }
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    &:hover {
+      background-color: $primary-100;
+      color: $primary;
+    }
+  }
+  .dropdown-menu {
+    @include customBreakPoint($navbarBreakpoint) {
+      border: 0;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+  }
+}

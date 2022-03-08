@@ -1,0 +1,25 @@
+<ul class="navbar-nav">
+  <li ngbDropdown class="nav-item dropdown">
+    <button ngbDropdownToggle class="nav-link dropdown-toggle">Company</button>
+    <ul ngbDropdownMenu class="dropdown-menu">
+      <li>
+        <a ngbDropdownItem class="dropdown-item" routerLink="/">Hiring</a>
+      </li>
+      <li>
+        <a ngbDropdownItem class="dropdown-item" routerLink="/">Blog </a>
+      </li>
+      <li>
+        <a ngbDropdownItem class="dropdown-item" routerLink="/">About Us</a>
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item" (click)="onLinkClickHandler()">
+    <a routerLink="/" fragment="services" class="nav-link">Services</a>
+  </li>
+  <li class="nav-item highlight" (click)="onLinkClickHandler()">
+    <a routerLink="/" class="nav-link">Get Free Quote</a>
+  </li>
+  <li class="nav-item" (click)="onLinkClickHandler()">
+    <a routerLink="/" fragment="contact-us" class="nav-link">Contact Us</a>
+  </li>
+</ul>
