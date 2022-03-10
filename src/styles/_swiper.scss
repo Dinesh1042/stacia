@@ -1,13 +1,37 @@
 @import "swiper/scss";
 @import "swiper/scss/effect-fade";
 
-// Hero Swiper
-
 .hero-swiper {
   .swiper-slide {
     padding-inline: 1.5rem;
     &-active {
       z-index: 10;
+    }
+  }
+}
+
+.swiper-slide {
+  width: auto;
+}
+
+.swiper-products-nav {
+  .swiper-slide {
+    text-align: center;
+  }
+
+  .btn {
+    opacity: 0.5;
+    &:hover {
+      background-color: darken($gray, 5);
+    }
+  }
+
+  .swiper-slide-active .btn {
+    opacity: 1;
+    background-color: $primary;
+    &:hover,
+    &:focus {
+      background-color: $primary;
     }
   }
 }

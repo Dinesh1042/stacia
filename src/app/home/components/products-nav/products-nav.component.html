@@ -1,0 +1,17 @@
+<div class="swiper-products-nav">
+  <swiper [config]="swiperConfig">
+    <ng-template swiperSlide *ngFor="let product of products">
+      <button class="btn shadow-none">
+        {{ product.type }}
+      </button>
+    </ng-template>
+  </swiper>
+  <div class="swiper-navigation">
+    <button class="btn-navigation" (click)="onPrevSlide()">
+      <img src="assets/icons/caret-left-fill.svg" alt="left caret icon" />
+    </button>
+    <button class="btn-navigation" (click)="onNextSlide()">
+      <img src="assets/icons/caret-right-fill.svg" alt="right caret icon" />
+    </button>
+  </div>
+</div>
