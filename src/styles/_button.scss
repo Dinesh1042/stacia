@@ -12,3 +12,13 @@
     color: $primary;
   }
 }
+
+.btn-primary-light {
+  background-color: transparent;
+  color: $primary;
+  padding-inline: 1rem;
+  &:hover {
+    color: $primary;
+    background-color: $primary-100;
+  }
+}

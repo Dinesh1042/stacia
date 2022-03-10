@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared/Models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
 
@@ -13,7 +13,10 @@ export class ProductComponent implements OnInit {
   loading = false;
   activeSlideIndex = 0;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -21,6 +24,11 @@ export class ProductComponent implements OnInit {
       next: this.handleSuccess.bind(this),
       error: this.handleError.bind(this),
     });
+  }
+
+  indexChangeHandler(index: number) {
+    this.activeSlideIndex = index;
+    this.changeDetectorRef.detectChanges();
   }
 
   private handleSuccess(products: Product[]) {

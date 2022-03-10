@@ -1,0 +1,68 @@
+@import "breakpoints";
+@import "variables";
+
+.product {
+  margin-top: 1rem;
+  padding: 1rem;
+
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    @include breakpoint(lg) {
+      gap: 3rem;
+    }
+  }
+
+  @include breakpoint(lg) {
+    margin-inline: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.product {
+  &-img {
+    border-radius: 0.75rem;
+    flex: 1;
+    overflow: hidden;
+    height: 200px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 260px;
+      height: clamp(240px, 50vw, 380px);
+      @include breakpoint(md) {
+        height: 100%;
+      }
+    }
+
+    @include breakpoint(md) {
+      height: 340px;
+      max-width: 450px;
+    }
+  }
+
+  &-info {
+    flex: 1;
+    margin-top: 0.5rem;
+
+    &__title {
+      color: $gray;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &__description {
+      margin-block: 1em;
+      color: $gray-800;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+  }
+}

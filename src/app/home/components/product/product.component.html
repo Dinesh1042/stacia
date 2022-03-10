@@ -2,9 +2,9 @@
   <ng-container *ngIf="products; else loadingOrErrorTemplate">
     <products-nav
       [products]="products"
-      (indexChange)="activeSlideIndex = $event"
+      (indexChange)="indexChangeHandler($event)"
     ></products-nav>
-    <product-detail></product-detail>
+    <product-detail [product]="products[activeSlideIndex]"></product-detail>
   </ng-container>
 
   <ng-template #loadingOrErrorTemplate>
