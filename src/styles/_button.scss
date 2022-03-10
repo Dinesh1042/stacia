@@ -1,0 +1,14 @@
+.btn-light {
+  color: $primary;
+  &:hover,
+  &:active {
+    color: $primary;
+    background-color: $gray-200;
+  }
+}
+
+.btn-outline-light {
+  &:hover {
+    color: $primary;
+  }
+}

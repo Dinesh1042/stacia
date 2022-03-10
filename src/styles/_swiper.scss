@@ -1,0 +1,13 @@
+@import "swiper/scss";
+@import "swiper/scss/effect-fade";
+
+// Hero Swiper
+
+.hero-swiper {
+  .swiper-slide {
+    padding-inline: 1.5rem;
+    &-active {
+      z-index: 10;
+    }
+  }
+}
