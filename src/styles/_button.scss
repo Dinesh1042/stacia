@@ -1,14 +1,16 @@
 .btn-light {
   color: $primary;
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     color: $primary;
     background-color: $gray-200;
   }
 }
 
 .btn-outline-light {
-  &:hover {
+  &:hover,
+  &:focus {
     color: $primary;
   }
 }
@@ -17,8 +19,18 @@
   background-color: transparent;
   color: $primary;
   padding-inline: 1rem;
-  &:hover {
+  &:hover,
+  &:focus {
     color: $primary;
     background-color: $primary-100;
+  }
+}
+
+.btn-primary {
+  &,
+  &:hover,
+  &:disabled,
+  &:focus {
+    color: #fff;
   }
 }
