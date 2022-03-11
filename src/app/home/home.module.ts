@@ -8,6 +8,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductComponent } from './components/product/product.component';
 import { ProductsNavComponent } from './components/products-nav/products-nav.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { ProductMethodCardComponent } from './components/product-method-card/product-method-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomeRoutingModule } from './home-routing.module';
     ProductComponent,
     ProductDetailComponent,
     ProductsNavComponent,
+    ProductMethodCardComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SwiperModule],
 })

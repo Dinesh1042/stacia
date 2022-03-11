@@ -9,4 +9,10 @@
       <a routerLink="/" class="btn btn-primary-light">Explore More &gt;&gt;</a>
     </div>
   </div>
+  <div class="product-methods">
+    <product-method-card
+      [productMethod]="productMethod"
+      *ngFor="let productMethod of product.methods"
+    ></product-method-card>
+  </div>
 </div>
