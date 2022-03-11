@@ -1,0 +1,54 @@
+<form
+  class="contact-us-form"
+  [formGroup]="contactUsForm"
+  (ngSubmit)="submitHandler()"
+>
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      [class.is-invalid]="name?.invalid && name?.touched"
+      formControlName="name"
+    />
+    <div class="invalid-feedback">
+      <div *ngIf="name?.hasError('required')">Name is required.</div>
+      <div *ngIf="name?.hasError('minlength')">
+        Name must be minimum
+        {{ name?.getError("minlength").requiredLength }} character length
+      </div>
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      [class.is-invalid]="email?.invalid && email?.touched"
+      formControlName="email"
+    />
+    <div class="invalid-feedback">
+      <div *ngIf="email?.hasError('required')">Email is required.</div>
+      <div *ngIf="email?.hasError('email')">Please enter a valid email.</div>
+    </div>
+  </div>
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea
+      id="message"
+      class="form-control"
+      [class.is-invalid]="message?.invalid && message?.touched"
+      formControlName="message"
+    ></textarea>
+    <div class="invalid-feedback">
+      <div *ngIf="message?.hasError('required')">Message is required.</div>
+    </div>
+  </div>
+  <button
+    [disabled]="contactUsForm.invalid"
+    [buttonLoader]="loading"
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
+</form>

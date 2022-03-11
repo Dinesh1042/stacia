@@ -1,0 +1,21 @@
+@import "variables";
+@import "breakpoints";
+
+.contact-us {
+  background-color: lighten($primary-100, 3);
+}
+
+.container-lg {
+  padding-block: 2.5rem;
+}
+
+.contact-us-description {
+  color: $gray-800;
+  @include breakpoint(md) {
+    max-width: 44ch;
+  }
+}
+
+.text-muted {
+  color: $gray-800;
+}

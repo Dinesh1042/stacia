@@ -1,0 +1,26 @@
+<section class="contact-us mt-5">
+  <div class="container-lg">
+    <div class="row" *ngIf="!isFormSubmitted; else formSubmitted">
+      <div class="col-md-6">
+        <h2 class="text-primary h1 fw-bold mt-lg-4 contact-us-title">
+          Let's Talk
+        </h2>
+        <p class="contact-us-description">
+          To request a quote or want to meet up for coffee contact us directly
+          or fill out the form and we will get back you promptly.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <contact-us-form
+          (onSubmitted)="isFormSubmitted = $event"
+        ></contact-us-form>
+      </div>
+    </div>
+    <ng-template #formSubmitted>
+      <div class="text-center">
+        <h2 class="text-primary fw-bold">Thank you for your message</h2>
+        <p class="text-muted">We'll get back you soon</p>
+      </div>
+    </ng-template>
+  </div>
+</section>
