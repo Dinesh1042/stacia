@@ -1,0 +1,103 @@
+@import "variables";
+@import "breakpoints";
+
+$footerBreakPoint: 910px;
+
+.footer {
+  background: $primary-100;
+  padding-block: 1.4rem 2rem;
+  @include customBreakPoint($footerBreakPoint) {
+    padding-top: 1.8rem;
+  }
+}
+
+.container-footer-link {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 1rem;
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include customBreakPoint($footerBreakPoint) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+.brand-logo {
+  max-width: 12.25em;
+  display: inline-block;
+
+  @include breakpoint(sm) {
+    grid-column: span 2;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 0.75rem;
+
+  .link-title {
+    margin: 0;
+    color: $primary;
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+
+  &-item {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+
+    .list-item-link {
+      color: $gray-800;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        color: $primary;
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin-left: 1.5rem;
+  }
+
+  @include customBreakPoint($footerBreakPoint) {
+    margin-left: 0;
+  }
+}
+
+.sub-footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 2rem;
+  margin-top: 3rem;
+
+  @include breakpoint(sm) {
+    flex-direction: row;
+  }
+
+  .social-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+    .social-link {
+      font-size: 1.125rem;
+    }
+  }
+}

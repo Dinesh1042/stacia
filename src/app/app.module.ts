@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterModule } from './footer/footer.module';
 import { HomeModule } from './home/home.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { SharedModule } from './shared/shared.module';
@@ -15,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
     NavbarModule,
     HomeModule,
     SharedModule,
+    FooterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
