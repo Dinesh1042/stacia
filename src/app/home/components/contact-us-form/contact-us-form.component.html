@@ -3,33 +3,63 @@
   [formGroup]="contactUsForm"
   (ngSubmit)="submitHandler()"
 >
-  <div class="form-group mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input
-      type="text"
-      class="form-control"
-      [class.is-invalid]="name?.invalid && name?.touched"
-      formControlName="name"
-    />
-    <div class="invalid-feedback">
-      <div *ngIf="name?.hasError('required')">Name is required.</div>
-      <div *ngIf="name?.hasError('minlength')">
-        Name must be minimum
-        {{ name?.getError("minlength").requiredLength }} character length
+  <div class="row mb-3">
+    <div class="form-group col-sm-6 mb-3 mb-sm-0">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="firstName?.invalid && firstName?.touched"
+        formControlName="firstName"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="firstName?.hasError('required')">
+          First Name is required.
+        </div>
+        <div *ngIf="firstName?.hasError('minlength')">
+          First Name must be minimum
+          {{ firstName?.getError("minlength").requiredLength }} character length
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="name" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="lastName?.invalid && lastName?.touched"
+        formControlName="lastName"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="lastName?.hasError('required')">Last Name is required.</div>
       </div>
     </div>
   </div>
-  <div class="form-group mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input
-      type="email"
-      class="form-control"
-      [class.is-invalid]="email?.invalid && email?.touched"
-      formControlName="email"
-    />
-    <div class="invalid-feedback">
-      <div *ngIf="email?.hasError('required')">Email is required.</div>
-      <div *ngIf="email?.hasError('email')">Please enter a valid email.</div>
+  <div class="row mb-3">
+    <div class="form-group col-sm-6 mb-3 mb-sm-0">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [class.is-invalid]="email?.invalid && email?.touched"
+        formControlName="email"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="email?.hasError('required')">Email is required.</div>
+        <div *ngIf="email?.hasError('email')">Please enter a valid email.</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="email" class="form-label">Company</label>
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="company?.invalid && company?.touched"
+        formControlName="company"
+      />
+      <div class="invalid-feedback">
+        <div *ngIf="company?.hasError('required')">Company is required.</div>
+      </div>
     </div>
   </div>
   <div class="form-group mb-3">

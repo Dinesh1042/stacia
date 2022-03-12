@@ -20,8 +20,10 @@ export class ContactUsFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactUsForm = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(3)]],
+      firstName: [null, [Validators.required, Validators.minLength(3)]],
+      lastName: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
+      company: [null, [Validators.required]],
       message: [null, [Validators.required]],
     });
   }
@@ -46,12 +48,20 @@ export class ContactUsFormComponent implements OnInit {
 
   // Form Getters
 
-  get name() {
-    return this.contactUsForm.get('name');
+  get firstName() {
+    return this.contactUsForm.get('firstName');
+  }
+
+  get lastName() {
+    return this.contactUsForm.get('lastName');
   }
 
   get email() {
     return this.contactUsForm.get('email');
+  }
+
+  get company() {
+    return this.contactUsForm.get('company');
   }
 
   get message() {
