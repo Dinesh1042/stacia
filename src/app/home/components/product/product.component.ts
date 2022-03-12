@@ -3,7 +3,7 @@ import { Product } from 'src/app/shared/Models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
-  selector: 'product',
+  selector: '[homeProduct]',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })

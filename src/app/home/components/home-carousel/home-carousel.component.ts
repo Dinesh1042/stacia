@@ -6,7 +6,7 @@ import Swiper, { Autoplay, EffectFade, SwiperOptions } from 'swiper';
 Swiper.use([Autoplay, EffectFade]);
 
 @Component({
-  selector: 'home-carousel',
+  selector: '[homeCarousel]',
   templateUrl: './home-carousel.component.html',
   styleUrls: ['./home-carousel.component.scss'],
 })
