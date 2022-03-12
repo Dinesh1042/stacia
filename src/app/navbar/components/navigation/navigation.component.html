@@ -1,5 +1,11 @@
 <ul class="navbar-nav">
-  <li ngbDropdown class="nav-item dropdown">
+  <li
+    ngbDropdown
+    #companyDropdown="ngbDropdown"
+    class="nav-item dropdown"
+    (mouseenter)="isDesktopView && companyDropdown.open()"
+    (mouseleave)="isDesktopView && companyDropdown.close()"
+  >
     <button ngbDropdownToggle class="nav-link dropdown-toggle">Company</button>
     <ul ngbDropdownMenu class="dropdown-menu">
       <li>
@@ -13,9 +19,62 @@
       </li>
     </ul>
   </li>
-  <li class="nav-item" (click)="onLinkClickHandler()">
-    <a routerLink="/" fragment="services" class="nav-link">Services</a>
+
+  <li
+    ngbDropdown
+    #serviceDropdown="ngbDropdown"
+    class="nav-item dropdown"
+    (mouseenter)="isDesktopView && serviceDropdown.open()"
+    (mouseleave)="isDesktopView && serviceDropdown.close()"
+  >
+    <button ngbDropdownToggle class="nav-link dropdown-toggle">Services</button>
+    <ul ngbDropdownMenu class="dropdown-menu">
+      <li>
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/residential-solar"
+        >
+          Residential Solar
+        </a>
+      </li>
+      <li>
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/commercial-solar"
+        >
+          Commercial Solar
+        </a>
+      </li>
+      <li>
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/energy-storage-system"
+        >
+          Energy Storage
+        </a>
+      </li>
+      <li>
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/ev-charging"
+          >Ev Charging</a
+        >
+      </li>
+      <li>
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/generator-plan-set"
+          >Generator Plan Set</a
+        >
+      </li>
+    </ul>
   </li>
+
   <li class="nav-item highlight" (click)="onLinkClickHandler()">
     <a routerLink="/" class="nav-link">Get Free Quote</a>
   </li>
