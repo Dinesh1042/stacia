@@ -1,4 +1,71 @@
 <ul class="navbar-nav">
+  <li class="nav-item" (click)="onLinkClickHandler()">
+    <a routerLink="/" class="nav-link">Home</a>
+  </li>
+  <li
+    ngbDropdown
+    #serviceDropdown="ngbDropdown"
+    class="nav-item dropdown"
+    (mouseenter)="isDesktopView && serviceDropdown.open()"
+    (mouseleave)="isDesktopView && serviceDropdown.close()"
+  >
+    <button ngbDropdownToggle class="nav-link dropdown-toggle">Services</button>
+    <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-services">
+      <li (click)="onLinkClickHandler()">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/residential-solar"
+        >
+          Residential Solar
+        </a>
+      </li>
+      <li (click)="onLinkClickHandler()">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/commercial-solar"
+        >
+          Commercial Solar
+        </a>
+      </li>
+      <li (click)="onLinkClickHandler()">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/energy-storage-system"
+        >
+          Energy Storage
+        </a>
+      </li>
+      <li (click)="onLinkClickHandler()">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/ev-charging-stations"
+          >Ev Charging Stations</a
+        >
+      </li>
+      <li (click)="onLinkClickHandler()">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/services/generator-plan-set"
+          >Generator Plan Set</a
+        >
+      </li>
+      <hr class="span-2" />
+      <li class="span-2 dropdown-wrap">
+        <a
+          ngbDropdownItem
+          class="dropdown-item"
+          routerLink="/"
+          fragment="services"
+          >All Services <span class="bi bi-arrow-right"></span>
+        </a>
+      </li>
+    </ul>
+  </li>
   <li
     ngbDropdown
     #companyDropdown="ngbDropdown"
@@ -8,77 +75,15 @@
   >
     <button ngbDropdownToggle class="nav-link dropdown-toggle">Company</button>
     <ul ngbDropdownMenu class="dropdown-menu">
-      <li>
-        <a ngbDropdownItem class="dropdown-item" routerLink="/">Hiring</a>
-      </li>
-      <li>
-        <a ngbDropdownItem class="dropdown-item" routerLink="/">Blog </a>
-      </li>
-      <li>
+      <li (click)="onLinkClickHandler()">
         <a ngbDropdownItem class="dropdown-item" routerLink="/">About Us</a>
       </li>
-    </ul>
-  </li>
-
-  <li
-    ngbDropdown
-    #serviceDropdown="ngbDropdown"
-    class="nav-item dropdown"
-    (mouseenter)="isDesktopView && serviceDropdown.open()"
-    (mouseleave)="isDesktopView && serviceDropdown.close()"
-  >
-    <button ngbDropdownToggle class="nav-link dropdown-toggle">Services</button>
-    <ul ngbDropdownMenu class="dropdown-menu">
-      <li>
-        <a
-          ngbDropdownItem
-          class="dropdown-item"
-          routerLink="/services/residential-solar"
-        >
-          Residential Solar
-        </a>
-      </li>
-      <li>
-        <a
-          ngbDropdownItem
-          class="dropdown-item"
-          routerLink="/services/commercial-solar"
-        >
-          Commercial Solar
-        </a>
-      </li>
-      <li>
-        <a
-          ngbDropdownItem
-          class="dropdown-item"
-          routerLink="/services/energy-storage-system"
-        >
-          Energy Storage
-        </a>
-      </li>
-      <li>
-        <a
-          ngbDropdownItem
-          class="dropdown-item"
-          routerLink="/services/ev-charging"
-          >Ev Charging</a
-        >
-      </li>
-      <li>
-        <a
-          ngbDropdownItem
-          class="dropdown-item"
-          routerLink="/services/generator-plan-set"
-          >Generator Plan Set</a
-        >
+      <li (click)="onLinkClickHandler()">
+        <a ngbDropdownItem class="dropdown-item" routerLink="/">We're Hiring</a>
       </li>
     </ul>
   </li>
-
   <li class="nav-item highlight" (click)="onLinkClickHandler()">
-    <a routerLink="/" class="nav-link">Get Free Quote</a>
-  </li>
-  <li class="nav-item" (click)="onLinkClickHandler()">
     <a routerLink="/" fragment="contact-us" class="nav-link">Contact Us</a>
   </li>
 </ul>
