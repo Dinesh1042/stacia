@@ -1,6 +1,10 @@
 @import "variables";
 @import "breakpoints";
 
+.swiper-container {
+  position: relative;
+}
+
 .hero-swiper {
   height: calc(100vh - 87.75px);
   min-height: 34.375em;
@@ -63,4 +67,44 @@
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   background-position: center center;
+}
+
+.btn-navigation {
+  display: none;
+  position: absolute;
+  top: calc(50% - 43.875px);
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 0.3rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+
+  &.swiper-prev {
+    margin-inline-start: 2rem;
+  }
+
+  &.swiper-next {
+    margin-inline-end: 2rem;
+    right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @include breakpoint(lg) {
+    display: flex;
+  }
 }

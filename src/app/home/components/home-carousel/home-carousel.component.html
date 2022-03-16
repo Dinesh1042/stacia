@@ -1,19 +1,27 @@
-<swiper [config]="swiperConfig" class="hero-swiper" *ngIf="carouselSlides">
-  <ng-template swiperSlide *ngFor="let slide of carouselSlides">
-    <header class="hero-header">
-      <h1 class="hero-header__title">{{ slide.title }}</h1>
-      <p class="hero-header__description">{{ slide.description }}</p>
-    </header>
-    <div class="hero-cta">
-      <button class="btn btn-light btn-lg">Explore Us</button
-      ><button class="btn btn-outline-light btn-lg">Get In Touch</button>
-    </div>
-    <div
-      class="hero-bg"
-      [ngStyle]="{ backgroundImage: 'url(' + slide.image + ')' }"
-    ></div>
-  </ng-template>
-</swiper>
+<div class="swiper-container">
+  <swiper [config]="swiperConfig" class="hero-swiper" *ngIf="carouselSlides">
+    <ng-template swiperSlide *ngFor="let slide of carouselSlides">
+      <header class="hero-header">
+        <h1 class="hero-header__title">{{ slide.title }}</h1>
+        <p class="hero-header__description">{{ slide.description }}</p>
+      </header>
+      <div class="hero-cta">
+        <button class="btn btn-light btn-lg">Explore Us</button
+        ><button class="btn btn-outline-light btn-lg">Get In Touch</button>
+      </div>
+      <div
+        class="hero-bg"
+        [ngStyle]="{ backgroundImage: 'url(' + slide.image + ')' }"
+      ></div>
+    </ng-template>
+  </swiper>
+  <button (click)="handlePrevSlide()" class="btn-navigation swiper-prev">
+    <span class="bi bi-chevron-left"></span>
+  </button>
+  <button (click)="handleNextSlide()" class="btn-navigation swiper-next">
+    <span class="bi bi-chevron-right"></span>
+  </button>
+</div>
 <ng-container *ngIf="error">
   <div class="error m-4">
     <div class="alert alert-danger">

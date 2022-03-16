@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HomeCarousel } from 'src/app/shared/Models/carousel';
 import { CarouselService } from 'src/app/shared/services/carousel.service';
 import Swiper, { Autoplay, EffectFade, SwiperOptions } from 'swiper';
+import { SwiperComponent } from 'swiper/angular';
 
 Swiper.use([Autoplay, EffectFade]);
 
@@ -11,6 +12,8 @@ Swiper.use([Autoplay, EffectFade]);
   styleUrls: ['./home-carousel.component.scss'],
 })
 export class HomeCarouselComponent implements OnInit {
+  @ViewChild(SwiperComponent, { static: false }) swiperElRef?: SwiperComponent;
+
   carouselSlides?: HomeCarousel[];
   error: Error | null = null;
   loading = false;
@@ -19,7 +22,7 @@ export class HomeCarouselComponent implements OnInit {
     loop: true,
     speed: 750,
     autoplay: {
-      delay: 5000,
+      delay: 4000,
       disableOnInteraction: false,
     },
   };
@@ -32,6 +35,14 @@ export class HomeCarouselComponent implements OnInit {
       next: this.handleSuccess.bind(this),
       error: this.handleError.bind(this),
     });
+  }
+
+  handleNextSlide() {
+    this.swiperElRef?.swiperRef.slideNext(500);
+  }
+
+  handlePrevSlide() {
+    this.swiperElRef?.swiperRef.slidePrev(500);
   }
 
   private handleSuccess(slides: HomeCarousel[]) {
