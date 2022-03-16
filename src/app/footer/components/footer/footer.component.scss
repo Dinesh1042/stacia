@@ -27,16 +27,24 @@ $footerBreakPoint: 910px;
   }
 }
 
-.brand-logo {
-  max-width: 12.25em;
-  display: inline-block;
-
+.brand-info {
   @include breakpoint(sm) {
     grid-column: span 2;
   }
 
-  img {
-    width: 100%;
+  .brand-logo {
+    max-width: 12.25em;
+    display: inline-block;
+    outline-color: $primary;
+    img {
+      width: 100%;
+    }
+  }
+  .brand-text {
+    max-width: 50ch;
+    @include customBreakPoint($footerBreakPoint) {
+      max-width: 44ch;
+    }
   }
 }
 
@@ -61,7 +69,9 @@ $footerBreakPoint: 910px;
     .list-item-link {
       color: $gray-800;
       text-decoration: none;
-      &:hover {
+      outline: 0;
+      &:hover,
+      &:focus {
         text-decoration: underline;
         color: $primary;
       }
@@ -97,7 +107,12 @@ $footerBreakPoint: 910px;
     display: flex;
     gap: 1.5rem;
     .social-link {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
+      outline: 0;
+      &:hover,
+      &:focus {
+        color: darken($primary, 10);
+      }
     }
   }
 }
