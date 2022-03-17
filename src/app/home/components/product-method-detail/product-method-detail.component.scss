@@ -1,0 +1,11 @@
+@import "breakpoints";
+
+.product-method-img {
+  width: 100%;
+  border-radius: 0.375rem;
+  max-height: 270px;
+  object-fit: cover;
+  @include breakpoint(md) {
+    max-width: 350px;
+  }
+}

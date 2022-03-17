@@ -1,0 +1,18 @@
+<h3 class="h3" mat-dialog-title>
+  {{ productMethodDetail.title }}
+</h3>
+<mat-dialog-content>
+  <img
+    class="product-method-img"
+    [src]="productMethodDetail.image"
+    [alt]="productMethodDetail.title"
+  />
+  <ul class="list-group list-group-flush mt-3">
+    <li class="list-group-item" *ngFor="let item of productMethodDetail.info">
+      {{ item }}
+    </li>
+  </ul>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button class="btn btn-light text-dark" mat-dialog-close>Close</button>
+</mat-dialog-actions>

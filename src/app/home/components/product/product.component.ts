@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Product } from 'src/app/shared/Models/product';
 import { ProductService } from 'src/app/shared/services/product.service';
 
@@ -13,10 +13,7 @@ export class ProductComponent implements OnInit {
   loading = false;
   activeSlideIndex = 0;
 
-  constructor(
-    private productService: ProductService,
-    private changeDetectorRef: ChangeDetectorRef
-  ) {}
+  constructor(private productService: ProductService, private ngZone: NgZone) {}
 
   ngOnInit(): void {
     this.loading = true;
@@ -26,9 +23,10 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  indexChangeHandler(index: number) {
-    this.activeSlideIndex = index;
-    this.changeDetectorRef.detectChanges();
+  handleIndexChange(index: number) {
+    this.ngZone.run(() => {
+      this.activeSlideIndex = index;
+    });
   }
 
   private handleSuccess(products: Product[]) {
