@@ -16,7 +16,7 @@ export class ProductDetailComponent {
 
   handleDownloadChecklist() {
     this.dialog.open(DownloadChecklistComponent, {
-      width: '90%',
+      width: '95%',
       maxWidth: 600,
     });
   }

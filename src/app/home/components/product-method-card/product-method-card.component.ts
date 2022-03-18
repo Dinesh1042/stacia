@@ -17,6 +17,8 @@ export class ProductMethodCardComponent {
   openDialog() {
     this.matDialog.open(ProductMethodDetailComponent, {
       data: this.productMethod,
+      width: '95%',
+      maxWidth: 670,
     });
   }
 }
