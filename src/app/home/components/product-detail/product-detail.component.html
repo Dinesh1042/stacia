@@ -6,7 +6,9 @@
     <div class="product-info">
       <h2 class="product-info__title">{{ product.title }}</h2>
       <p class="product-info__description">{{ product.description }}</p>
-      <a routerLink="/" class="btn btn-primary-light">Explore More &gt;&gt;</a>
+      <button class="btn btn-primary" (click)="handleDownloadChecklist()">
+        Download Free Checklist
+      </button>
     </div>
   </div>
   <div class="product-methods">

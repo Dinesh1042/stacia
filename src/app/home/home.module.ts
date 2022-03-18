@@ -7,6 +7,7 @@ import { SwiperModule } from 'swiper/angular';
 import { SharedModule } from '../shared/shared.module';
 import { ContactUsFormComponent } from './components/contact-us-form/contact-us-form.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { DownloadChecklistComponent } from './components/download-checklist/download-checklist.component';
 import { HomeCarouselComponent } from './components/home-carousel/home-carousel.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -15,6 +16,7 @@ import { ProductMethodDetailComponent } from './components/product-method-detail
 import { ProductComponent } from './components/product/product.component';
 import { ProductsNavComponent } from './components/products-nav/products-nav.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { DownloadChecklistFormComponent } from './components/download-checklist-form/download-checklist-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { HomeRoutingModule } from './home-routing.module';
     ContactUsComponent,
     ContactUsFormComponent,
     ProductMethodDetailComponent,
+    DownloadChecklistComponent,
+    DownloadChecklistFormComponent,
   ],
   imports: [
     CommonModule,
