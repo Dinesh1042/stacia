@@ -11,7 +11,7 @@
       </button>
     </div>
   </div>
-  <div class="product-methods">
+  <div class="product-methods" *ngIf="product.methods.length">
     <product-method-card
       [productMethod]="productMethod"
       *ngFor="let productMethod of product.methods"

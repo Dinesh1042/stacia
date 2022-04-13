@@ -117,50 +117,7 @@ const products: Product[] = [
     description:
       'Backup systems with AC coupled batteries like Telsa Powerwall 2.0 with solarEdge or micro-inventor. Backup system with DC coupled batteries like LG chem with SolarEdge - Store Edge inventors and also SolarEdge backup interface. Backup system with Enphase  Ensemble system with encharge.',
     image: 'assets/product-images/energy-storage-system.jpg',
-    methods: [
-      {
-        icon: 'assets/icons/easel-fill.svg',
-        title: 'Proposal Drawing',
-        description: 'We provide the customized proposal design service.',
-        image: 'assets/product-images/energy-storage-system.jpg',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-      {
-        icon: 'assets/icons/boxes.svg',
-        title: 'Permit Package',
-        description: 'We provide you with the complete design packages.',
-        image: 'assets/product-images/energy-storage-system.jpg',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-      {
-        icon: 'assets/icons/award-fill.svg',
-        title: 'Stamping',
-        description: 'We provide the stamping as per the requirements.',
-        image: 'assets/product-images/energy-storage-system.jpg',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-    ],
+    methods: [],
   },
   {
     type: 'EV Charging Stations',
@@ -195,50 +152,7 @@ const products: Product[] = [
     description:
       'Our team of engineers is experienced in generating EV-charger plan-sets that supports safe and efficient installations. We currently designing residential EV-charger plan-sets and our engineers are currently studying to create EV-charging stations design also.',
     image: 'assets/product-images/generator-plan-set.png',
-    methods: [
-      {
-        icon: 'assets/icons/easel-fill.svg',
-        title: 'Proposal Drawing',
-        description: 'We provide the customized proposal design service.',
-        image: 'assets/product-images/generator-plan-set.png',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-      {
-        icon: 'assets/icons/boxes.svg',
-        title: 'Permit Package',
-        description: 'We provide you with the complete design packages.',
-        image: 'assets/product-images/generator-plan-set.png',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-      {
-        icon: 'assets/icons/award-fill.svg',
-        title: 'Stamping',
-        description: 'We provide the stamping as per the requirements.',
-        image: 'assets/product-images/generator-plan-set.png',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
-      },
-    ],
+    methods: [],
   },
 ];
 
