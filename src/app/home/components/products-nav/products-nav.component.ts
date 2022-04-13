@@ -21,6 +21,7 @@ export class ProductsNavComponent {
     spaceBetween: 30,
     centeredSlides: true,
     on: {
+      click: (swiper) => swiper.slideTo(swiper.clickedIndex, 500),
       activeIndexChange: ({ realIndex }) =>
         this.indexChangeHandler.emit(realIndex),
     },
