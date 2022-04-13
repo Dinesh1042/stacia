@@ -17,7 +17,11 @@ const products: Product[] = [
         icon: 'assets/icons/easel-fill.svg',
         title: 'Proposal Drawing',
         description: 'We provide the customized proposal design service.',
+<<<<<<< HEAD
         image: 'assets/product-images/proposal-drawing.png',
+=======
+        image: 'assets/product-images/permit-plan.png',
+>>>>>>> e6cd6e5f0b9e917077987a0e62e51a57281415be
         info: [
           'SPPV Layout',
           'Initial Roof & Array sketch',
