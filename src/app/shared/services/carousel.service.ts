@@ -9,13 +9,13 @@ const homeCarousel = [
     title: 'We are building the better world.',
     image: 'assets/home-carousel/better-living.jpeg',
     description:
-      'We have always held to the hope, the belief, the conviction that there is a better life, a better world, beyond the horizon.',
+      'We always have a strong conviction, hope and belief that there is a better life, better world beyond the horizon',
   },
   {
     title: 'We assure a 24hr turn around period.',
     image: 'assets/home-carousel/residential-solar.jpeg',
     description:
-      'We have extensive experience in designing of residential solar system.',
+      'We have extensive experience in designing residential solar system.',
   },
   {
     title: 'Dedicated project managers for our clients.',
