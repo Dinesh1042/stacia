@@ -9,9 +9,12 @@
 }
 
 .btn-outline-light {
+  border-color: transparentize($white, 0.5);
   &:hover,
   &:focus {
-    color: $primary;
+    color: $white;
+    background-color: transparentize($white, 0.75);
+    border-color: $white;
   }
 }
 
