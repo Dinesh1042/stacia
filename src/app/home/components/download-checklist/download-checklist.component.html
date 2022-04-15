@@ -7,11 +7,15 @@
 <main>
   <p *ngIf="isChecklistFormSubmitted">
     Your checklist should started downloading automatically. If not
-    <a routerLink="/">Click here to download</a>
+    <a routerLink="/" (click)="downloadChecklist()">Click here to download</a>
   </p>
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error.message }}
+  </div>
   <download-checklist-form
     *ngIf="!isChecklistFormSubmitted"
     (isSubmitted)="isChecklistFormSubmitted = $event"
+    (handleError)="error = $event"
   ></download-checklist-form>
 </main>
 <mat-dialog-actions align="end" *ngIf="isChecklistFormSubmitted">

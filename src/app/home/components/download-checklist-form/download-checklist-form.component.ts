@@ -8,7 +8,8 @@ import { DownloadChecklistService } from 'src/app/shared/services/download-check
   styleUrls: ['./download-checklist-form.component.scss'],
 })
 export class DownloadChecklistFormComponent {
-  @Output('isSubmitted') handleIsSubmitted = new EventEmitter();
+  @Output('isSubmitted') handleIsSubmitted = new EventEmitter<boolean>();
+  @Output('handleError') handleError = new EventEmitter<Error | null>();
 
   downloadChecklistForm: FormGroup;
   loading = false;
@@ -28,16 +29,25 @@ export class DownloadChecklistFormComponent {
     if (this.downloadChecklistForm.invalid) return;
 
     this.loading = true;
+    this.downloadChecklistForm.disable();
 
-    try {
-      await this.checklistService.downloadChecklist(
-        this.downloadChecklistForm.value
-      );
+    const handleSuccess = () => {
       this.handleIsSubmitted.emit(true);
-    } catch (error) {
-      console.log(error);
-    }
-    this.loading = false;
+      this.handleError.emit(null);
+      this.downloadChecklistForm.enable();
+      this.downloadChecklistForm.reset();
+      this.loading = false;
+    };
+
+    const handleError = (error: Error) => {
+      this.handleError.emit(error);
+      this.downloadChecklistForm.enable();
+      this.loading = false;
+    };
+
+    this.checklistService
+      .downloadChecklist(this.downloadChecklistForm.value)
+      .subscribe({ next: handleSuccess, error: handleError });
   }
 
   // Form Getters
