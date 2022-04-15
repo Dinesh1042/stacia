@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { ContactUsForm } from '../Models/contactUsForm';
 
@@ -6,14 +8,12 @@ import { ContactUsForm } from '../Models/contactUsForm';
   providedIn: 'root',
 })
 export class ContactUsService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
-  sendMessage(contactUsForm: ContactUsForm): Promise<{ message: string }> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({ message: 'You message has delivered to us.' });
-        console.log(contactUsForm, 'formSubmitted');
-      }, 3000);
-    });
+  sendMessage(contactUsForm: ContactUsForm): Observable<{ message: string }> {
+    return this.httpClient.post<{ message: string }>(
+      `http://localhost:3000/contact`,
+      contactUsForm
+    );
   }
 }

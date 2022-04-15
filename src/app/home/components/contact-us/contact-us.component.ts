@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ContactUsComponent {
   isFormSubmitted = false;
+  error: Error | null = null;
 }

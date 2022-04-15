@@ -9,6 +9,7 @@ import { ContactUsService } from 'src/app/shared/services/contact-us.service';
 })
 export class ContactUsFormComponent implements OnInit {
   @Output('onSubmitted') onSubmitted = new EventEmitter<boolean>();
+  @Output('handleError') handleError = new EventEmitter<Error | null>();
 
   contactUsForm!: FormGroup;
   loading = false;
@@ -35,16 +36,23 @@ export class ContactUsFormComponent implements OnInit {
     this.loading = true;
     this.contactUsForm.disable();
 
-    try {
-      await this.contactUsService.sendMessage(this.contactUsForm.value);
+    const handleSuccess = () => {
       this.onSubmitted.emit(true);
+      this.handleError.emit(null);
       this.contactUsForm.reset();
-    } catch (error) {
-      console.log(error);
-    }
+      this.contactUsForm.enable();
+      this.loading = false;
+    };
 
-    this.contactUsForm.enable();
-    this.loading = false;
+    const handleError = (error: Error) => {
+      this.handleError.emit(error);
+      this.contactUsForm.enable();
+      this.loading = false;
+    };
+
+    this.contactUsService
+      .sendMessage(this.contactUsForm.value)
+      .subscribe({ next: handleSuccess, error: handleError });
   }
 
   // Form Getters

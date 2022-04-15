@@ -10,8 +10,12 @@
       </p>
     </div>
     <div class="col-md-6">
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error.message }}
+      </div>
       <contact-us-form
         (onSubmitted)="isFormSubmitted = $event"
+        (handleError)="error = $event"
       ></contact-us-form>
     </div>
   </div>
