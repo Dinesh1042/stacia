@@ -133,14 +133,7 @@ const products: Product[] = [
         description:
           'We provide the customized design service for EV charging stations.',
         image: 'assets/product-images/ev-charging.jpeg',
-        info: [
-          'Single/Three Line Diagram',
-          'Preliminary Solar Assessment (PSA)',
-          'Initial Roof and Array Sketch',
-          'Shading Analysis',
-          'Calculation of ROI',
-          'PR estimate using industry leading software like Aurora, Helioscope, PVSyst, etc',
-        ],
+        info: ['Contact us at - enquiry@staciapowersolutions.com'],
       },
     ],
   },
