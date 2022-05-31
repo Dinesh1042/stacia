@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run stacia:serve-ssr",
     "serve:ssr": "node dist/stacia/server/main.js",
     "build:ssr": "ng build && ng run stacia:server",
-    "prerender": "ng run stacia:prerender"
+    "prerender": "ng run stacia:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
