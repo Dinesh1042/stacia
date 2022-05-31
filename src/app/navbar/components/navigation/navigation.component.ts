@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: '[navigation]',
@@ -7,15 +7,10 @@ import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 })
 export class NavigationComponent {
   @Output('onCollapse') onCollapse = new EventEmitter();
-  @HostListener('window:resize') getWindowWidth() {
-    this.isDesktopView = window.innerWidth > 992;
-  }
 
   isDesktopView = false;
 
-  constructor() {
-    this.getWindowWidth();
-  }
+  constructor() {}
 
   onLinkClickHandler() {
     this.onCollapse.emit();
