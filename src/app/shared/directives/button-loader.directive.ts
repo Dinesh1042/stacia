@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2 } from "@angular/core";
 
 @Directive({
   selector: '[buttonLoader]',
@@ -34,7 +34,7 @@ export class ButtonLoaderDirective {
   }
 
   private removeLoader() {
-    [...this.elementRef.nativeElement.children].forEach((el: HTMLDivElement) =>
+    [...this.elementRef.nativeElement?.children].forEach((el: HTMLDivElement) =>
       this.renderer.removeChild(this.elementRef.nativeElement, el)
     );
     this.removeLoadingClass();
