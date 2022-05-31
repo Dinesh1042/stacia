@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable, tap } from "rxjs";
 
-import { DownloadChecklistForm } from '../Models/downloadChecklistForm';
+import { DownloadChecklistForm } from "../Models/downloadChecklistForm";
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class DownloadChecklistService {
   ): Observable<{ message: string }> {
     return this.httpClient
       .post<{ message: string }>(
-        `http://localhost:3000/download-checklist`,
+        `https://stacia1.herokuapp.com/contact/download`,
         checklistForm
       )
       .pipe(tap(() => this.downloadChecklistFile()));
